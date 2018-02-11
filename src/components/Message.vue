@@ -1,15 +1,17 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
+    <h2>{{ msg2 }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Message',
   data() {
     return {
-      msg: 'NikolasMelui starts here!'
+      msg: 'NikolasMelui starts here!',
+      msg2: 'And here))'
     };
   }
 };
