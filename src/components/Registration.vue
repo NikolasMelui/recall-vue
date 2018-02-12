@@ -1,7 +1,7 @@
 <template>
   <div class="registration">
     <h3>Register here!</h3>
-    <div class="row" v-for="user in users">
+    <div class="row" v-for="user in users" :key="user.name">
       <h4>{{ user.name }}</h4>
       <button @click="registerUser(user)">Register</button>
     </div>

@@ -1,21 +1,21 @@
 <template>
-  <div class="registrations">
-    <div class="summary">
+    <div id="registrations">
+        <div class="summary">
             <h3>Registrations</h3>
             <h5>Total: {{ total }}</h5>
         </div>
         <hr>
-        <div class="row" v-for="registration in registrations">
-          <h4> {{ registration.name }}</h4>
-          <span @click="unregistered(registration)">(Unregistered)</span>
-          <div class="date">{{ registration.date }}</div>
+        <div class="row" v-for="registration in registrations" :key="registration.name">
+            <h4>{{ registration.name }}</h4>
+            <span @click="unregister(registration)">(Unregister)</span>
+            <div class="date">{{ registration.date }}</div>
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
 export default {
-  props: ['registration'],
+  props: ['registrations'],
   methods: {
     unregister(registration) {
       this.$emit('userUnregistered', registration);
@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     total() {
-      return this.registration.length;
+      return this.registrations.length;
     }
   }
 };
